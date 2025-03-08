@@ -6,7 +6,7 @@ const Contact=require("../models/contachModal")
 //@route GET /api/contact
 //@access public
 
-const getContacts= asyncHandler(async (req,res)=>{
+const getContacts = asyncHandler(async (req,res)=>{
     const contacts= await Contact.find();
     res.status(200).json(contacts);//if you want to send a json responce
 })
