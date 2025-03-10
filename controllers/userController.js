@@ -6,6 +6,7 @@ const bcrypt= require("bcrypt");
 //@route POST /users/register
 //@access public
 
+
 const registerUser = asyncHandler(async (req,res)=>{
     const {username,email,password}=req.body;
     if(!username||!email|| !password){
@@ -21,7 +22,7 @@ const registerUser = asyncHandler(async (req,res)=>{
 
     //Hash password(we store hashPassword in DB not the raw passowrd)
     const hashPassword=await bcrypt.hash(password,10);
-    console.log("hasspassword", hashPassword);
+    console.log("hashpassword", hashPassword);
     const user=await User.create({
         username,
         email,
