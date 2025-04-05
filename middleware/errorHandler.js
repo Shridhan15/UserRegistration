@@ -7,7 +7,7 @@ const errorHandler=(err,req,res,next)=>{
         //send the response as per what is the error
         case constants.VALIDATION_ERROR:
             res.json({ 
-                title:"Validation Faile", 
+                title:"Validation Failed", 
                 message:err.message,
                 stackTrack:err.stack
             });
